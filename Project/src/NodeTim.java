@@ -1,9 +1,12 @@
 class NodeTim {
-    Tim data;
+    int data;
     NodeTim next;
     String nama;
+    NodeTim head;
+    NodeTim tail;
 
-    NodeTim(Tim data, String nama) {
+
+    NodeTim(int data, String nama) {
         this.data = data;
         this.next = null;
         this.nama = nama;
