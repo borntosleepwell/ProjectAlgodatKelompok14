@@ -1,19 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        List list = new List();
-        NodeTim team1 = new NodeTim(1, "RRQ");
-        NodeTim team2 = new NodeTim(2, "EVOS");
-        NodeTim team3 = new NodeTim(3, "BTR");
+        ListPlayer playerRRQ = new ListPlayer();
+        playerRRQ.addPlayer("Skylar", "GoldLaner"); 
+        playerRRQ.addPlayer("Sutsujin", "Jungler"); 
+        playerRRQ.addPlayer("Rinz", "MidLaner"); 
+        playerRRQ.addPlayer("idok", "Roamer"); 
+        playerRRQ.addPlayer("Dyrennn", "ExpLaner");
 
-        list.addData(team1);
-        list.addData(team2);
-        list.addData(team3);
+        ListPlayer playerEvos = new ListPlayer();
+        playerEvos.addPlayer("Natco", "GoldLaner"); 
+        playerEvos.addPlayer("Anavel", "Jungler"); 
+        playerEvos.addPlayer("clawkun", "MidLaner"); 
+        playerEvos.addPlayer("DreamS", "Roamer"); 
+        playerEvos.addPlayer("Saykots", "ExpLaner");
 
-
-
-        
-
-        // System.out.println("Data:");
-        // list.printList();
+        ListPlayer playerBTR = new ListPlayer();
+        playerBTR.addPlayer("EMANN", "GoldLaner"); 
+        playerBTR.addPlayer("Super Kenn", "Jungler"); 
+        playerBTR.addPlayer("MORENO", "MidLaner"); 
+        playerBTR.addPlayer("KYY", "Roamer"); 
+        playerBTR.addPlayer("Super Luke", "ExpLaner");
     }
 }

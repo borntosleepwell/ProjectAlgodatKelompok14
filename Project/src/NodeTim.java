@@ -1,14 +1,11 @@
 class NodeTim {
-    int data;
     NodeTim next;
     String nama;
-    NodeTim head;
-    NodeTim tail;
+    ListPlayer headPlayer;
 
-
-    NodeTim(int data, String nama) {
-        this.data = data;
-        this.next = null;
+    NodeTim(String nama, ListPlayer player){
         this.nama = nama;
+        headPlayer = player;
+        this.next = null;
     }
 }

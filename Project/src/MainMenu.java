@@ -43,6 +43,35 @@ public class MainMenu {
             }
         }
         input.close();
+
+        ListPlayer playerRRQ = new ListPlayer();
+        playerRRQ.addPlayer("Skylar", "GoldLaner"); 
+        playerRRQ.addPlayer("Sutsujin", "Jungler"); 
+        playerRRQ.addPlayer("Rinz", "MidLaner"); 
+        playerRRQ.addPlayer("idok", "Roamer"); 
+        playerRRQ.addPlayer("Dyrennn", "ExpLaner");
+
+        ListPlayer playerEvos = new ListPlayer();
+        playerEvos.addPlayer("Natco", "GoldLaner"); 
+        playerEvos.addPlayer("Anavel", "Jungler"); 
+        playerEvos.addPlayer("clawkun", "MidLaner"); 
+        playerEvos.addPlayer("DreamS", "Roamer"); 
+        playerEvos.addPlayer("Saykots", "ExpLaner");
+
+        ListPlayer playerBTR = new ListPlayer();
+        playerBTR.addPlayer("EMANN", "GoldLaner"); 
+        playerBTR.addPlayer("Super Kenn", "Jungler"); 
+        playerBTR.addPlayer("MORENO", "MidLaner"); 
+        playerBTR.addPlayer("KYY", "Roamer"); 
+        playerBTR.addPlayer("Super Luke", "ExpLaner");
+
+        ListTim rrq = new ListTim();
+        ListTim evos = new ListTim();
+        ListTim btr = new ListTim();
+
+        rrq.addTim("RRQ", playerRRQ);
+        evos.addTim("Evos", playerEvos);
+        btr.addTim("BTR", playerBTR);
     }
 
     public static void tampilkanHeader() {
