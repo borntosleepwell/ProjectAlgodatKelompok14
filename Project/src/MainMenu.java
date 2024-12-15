@@ -64,14 +64,6 @@ public class MainMenu {
         playerBTR.addPlayer("MORENO", "MidLaner"); 
         playerBTR.addPlayer("KYY", "Roamer"); 
         playerBTR.addPlayer("Super Luke", "ExpLaner");
-
-        ListTim rrq = new ListTim();
-        ListTim evos = new ListTim();
-        ListTim btr = new ListTim();
-
-        rrq.addTim("RRQ", playerRRQ);
-        evos.addTim("Evos", playerEvos);
-        btr.addTim("BTR", playerBTR);
     }
 
     public static void tampilkanHeader() {

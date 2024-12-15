@@ -1,11 +1,12 @@
 class NodeTim {
-    NodeTim next;
+    NodeTim left, right;
     String nama;
     ListPlayer headPlayer;
 
     NodeTim(String nama, ListPlayer player){
         this.nama = nama;
         headPlayer = player;
-        this.next = null;
+        left = null;
+        right = null;
     }
 }

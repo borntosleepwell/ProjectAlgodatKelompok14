@@ -6,6 +6,6 @@ public class NodePlayer {
     NodePlayer(String nama, String role){
         this.nama = nama;
         this.role = role;
-        this.next = null;
+        next = null;
     }
 }
