@@ -9,12 +9,11 @@ public class MainMenu {
         while (pilihan != 6) {
             tampilkanHeader();
             System.out.println("====== Menu Utama ======");
-            System.out.println("1. Tambahkan Tim");
-            System.out.println("2. Hapus Tim");
-            System.out.println("3. List Tim");
-            System.out.println("4. Jadwal Pertandingan");
-            System.out.println("5. Bracket List");
-            System.out.println("6. Keluar");
+            System.out.println("1. List Tim");
+            System.out.println("2. Cari Info Pemain");
+            System.out.println("3. Bracket List");
+            System.out.println("4. [SIMULASIKAN TURNAMEN]");
+            System.out.println("5. Keluar");
             System.out.print("Masukkan Opsi : ");
 
             pilihan = input.nextInt();
