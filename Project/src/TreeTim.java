@@ -8,6 +8,48 @@ public class TreeTim {
         return root == null;
     }
 
+    void levelOrder(){
+        if (root == null) {
+            System.out.println("Tree is empty.");
+            return;
+        }
+        Queue queue = new Queue();
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            NodeTim current = queue.dequeue();
+            System.out.println(current.nama);
+            if (current.left != null) {
+                queue.enqueue(current.left);
+            }
+            if (current.right != null) {
+                queue.enqueue(current.right);
+            }
+        }
+    }
+
+    void levelOrderTim2(){
+        if (root == null) {
+            System.out.println("Tree is empty.");
+            return;
+        }
+        int i = 1;
+        Queue queue = new Queue();
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            NodeTim current = queue.dequeue();
+            if(current.headPlayer != null){
+                System.out.println(i + ". " + current.nama);
+                i++;
+            }
+            if (current.left != null) {
+                queue.enqueue(current.left);
+            }
+            if (current.right != null) {
+                queue.enqueue(current.right);
+            }
+        }
+    }
+
     void matchDay(){
         String header = """
                   __  __           _            _         ____                                 
