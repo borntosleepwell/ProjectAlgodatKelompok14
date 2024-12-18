@@ -13,7 +13,22 @@ public class ListPlayer {
             tail = newNode;
         }
     }
-    
+    void printPlayer(){
+        NodePlayer current = head;
+        while(current != null){
+            System.out.println(current.nama + ", Role : " + current.role);
+            System.out.println("------------------------------------------");
+            System.out.println(current.kill + "/" + current.death + "/" + current.assist);
+            if(current.death == 0){
+                System.out.println("KDA : 0");
+            }else{
+                System.out.println("KDA : " + (current.kill + current.assist) / current.death);
+            }
+            System.out.println();
+            current = current.next;
+}
+}
+
     void updateKDA(){
         NodePlayer current = head;
         while(current != null){

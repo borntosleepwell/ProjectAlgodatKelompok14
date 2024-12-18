@@ -7,7 +7,54 @@ public class TreeTim {
     boolean isEmpty(){
         return root == null;
     }
+    void levelOrderPlayer(String namaTim){
+        if (root == null) {
+            System.out.println("Tree is empty.");
+            return;
+        }
+        Queue queue = new Queue();
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            NodeTim current = queue.dequeue();
+            if(current.nama == namaTim){
+                System.out.println(current.nama);
+                System.out.println("==========================================");
+                current.headPlayer.printPlayer();
+                System.out.println();
+            }
+            if (current.left != null) {
+                queue.enqueue(current.left);
+            }
 
+            if (current.right != null) {
+                queue.enqueue(current.right);
+            }
+        }
+    }
+
+     void levelOrderTim(){
+        if (root == null) {
+            System.out.println("Tree is empty.");
+            return;
+        }
+        Queue queue = new Queue();
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            NodeTim current = queue.dequeue();
+            if(current.headPlayer != null){
+                System.out.println(current.nama);
+                System.out.println("Win : " + current.win + " Lose : " + current.lose);
+                System.out.println();
+            }
+            if (current.left != null) {
+                queue.enqueue(current.left);
+            }
+
+            if (current.right != null) {
+                queue.enqueue(current.right);
+            }
+}
+}
     void matchDay(){
         String header = """
                   __  __           _            _         ____                                 
