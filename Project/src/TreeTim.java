@@ -31,7 +31,6 @@ public class TreeTim {
             }
         }
     }
-
      void levelOrderTim(){
         if (root == null) {
             System.out.println("Tree is empty.");
