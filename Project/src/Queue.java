@@ -1,12 +1,12 @@
 public class Queue {
-    NodePlayer front = null, back = null;
+    NodeQueue front = null, back = null;
 
     boolean isEmpty(){
         return front == null;
     }
 
     int size(){
-        NodePlayer current = front;
+        NodeQueue current = front;
         int i = 0;
         while(current != null){
             i++;
@@ -15,8 +15,9 @@ public class Queue {
         return i;
     }
 
-    void enqueue(NodePlayer newNode){
-        if(front == null){
+    void enqueue(NodeTim treeNode){
+        NodeQueue newNode = new NodeQueue(treeNode);
+        if(isEmpty()){
             front = back = newNode;
         }else{
             back.next = newNode;
@@ -24,8 +25,8 @@ public class Queue {
         }
     }
 
-    NodePlayer dequeue(){
-        NodePlayer temp = front;
+    NodeTim dequeue(){
+        NodeTim temp = front.treeNode;
         front = front.next;
         return temp;
     }
