@@ -20,10 +20,10 @@ public class MainMenu {
 
         ListPlayer playerBTR = new ListPlayer();
         playerBTR.addPlayer("EMANN", "GoldLaner"); 
-        playerBTR.addPlayer("Super Kenn", "Jungler"); 
+        playerBTR.addPlayer("SuperKenn", "Jungler"); 
         playerBTR.addPlayer("MORENO", "MidLaner"); 
         playerBTR.addPlayer("KYY", "Roamer"); 
-        playerBTR.addPlayer("Super Luke", "ExpLaner");
+        playerBTR.addPlayer("SuperLuke", "ExpLaner");
 
         ListPlayer playerTLID = new ListPlayer();
         playerTLID.addPlayer("AeronShiki", "GoldLaner");
@@ -37,17 +37,26 @@ public class MainMenu {
         NodeTim btr = new NodeTim("BTR", playerBTR);
         NodeTim tlid = new NodeTim("TLID", playerTLID);
         NodeTim juara = new NodeTim("Champion", null);
-        NodeTim grandFinal1 = new NodeTim("Grand Final", null);
-        NodeTim grandFinal2 = new NodeTim("Grand Final", null);
+        NodeTim grandFinal1 = new NodeTim("Final", null);
+        NodeTim grandFinal2 = new NodeTim("Final", null);
 
         TreeTim tree = new TreeTim();
         tree.root = juara;
+
         tree.root.left = grandFinal1;
         tree.root.right = grandFinal2;
+        tree.root.left.parent = tree.root;
+        tree.root.right.parent = tree.root;
+
         tree.root.left.left = rrq;
         tree.root.left.right = evos;
+        tree.root.left.left.parent = tree.root.left;
+        tree.root.left.right.parent = tree.root.left;
+
         tree.root.right.left = btr;
         tree.root.right.right = tlid;
+        tree.root.right.left.parent = tree.root.right;
+        tree.root.right.right.parent = tree.root.right;
 
         while(true){
             header();
@@ -111,7 +120,19 @@ public class MainMenu {
                     }
                 }
             }else if(input == 5){
-
+                tree.bestPlayer();
+                System.out.print(">>>");
+                String kembali = scanner.next();
+                System.out.print("\033[H\033[2J");  
+                System.out.flush();
+            }else if(input == 6){
+                System.out.print("Cari Nama Player : ");
+                String nama = scanner.next();
+                System.out.println();
+                tree.search(nama);
+                String kembali = scanner.next();
+                System.out.print("\033[H\033[2J");  
+                System.out.flush();
             }
             else{
                 break;
@@ -138,7 +159,8 @@ public class MainMenu {
         System.out.println("3. Team's Score");
         System.out.println("4. Player Of The Team");
         System.out.println("5. Best Player");
-        System.out.println("6. EXIT");
+        System.out.println("6. Search Player");
+        System.out.println("7. EXIT");
         System.out.print(">>>");
     }
 }
