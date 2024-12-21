@@ -237,4 +237,36 @@ public class TreeTim {
             }
         }
     }
+    void bestPlayer(){
+        if (root == null) {
+            System.out.println("Tree is empty.");
+            return;
+        }
+        Queue queue = new Queue();
+        queue.enqueue(root);
+        Stack stack = new Stack();
+        while (!queue.isEmpty()) {
+            NodeTim current = queue.dequeue();
+            if(current.headPlayer != null){
+                NodePlayer posisi = current.headPlayer.head;
+                while(posisi != null){
+                    NodePlayer temp = new NodePlayer(posisi.nama, posisi.role);
+                    temp.kill = posisi.kill;
+                    temp.assist = posisi.assist;
+                    temp.death = posisi.death;
+                    stack.push(temp);
+                    posisi = posisi.next;
+                }
+            }
+            if (current.left != null) {
+                queue.enqueue(current.left);
+            }
+            if (current.right != null) {
+                queue.enqueue(current.right);
+            }
+        }
+        stack.selectionSort();
+        stack.printPlayer();
+        
+    }
 }
