@@ -214,4 +214,27 @@ public class TreeTim {
         parentNode.lose = node.lose;
         parentNode.play = node.play;
     }
+
+    void search(String namaPlayer){
+        if (root == null) {
+            System.out.println("Tree is empty.");
+            return;
+        }
+        Queue queue = new Queue();
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            NodeTim current = queue.dequeue();
+            if(current.headPlayer != null){
+                System.out.println(current.nama);
+                current.headPlayer.linearSearch(namaPlayer);
+                System.out.println();
+            }
+            if (current.left != null) {
+                queue.enqueue(current.left);
+            }
+            if (current.right != null) {
+                queue.enqueue(current.right);
+            }
+        }
+    }
 }
