@@ -26,6 +26,10 @@ public class Queue {
     }
 
     NodeTim dequeue(){
+        if(front == null){
+            System.out.println("============================\nTIDAK ADA PERTANDINGAN LAGI!\n============================");
+            return null;
+        }
         NodeTim temp = front.treeNode;
         front = front.next;
         return temp;

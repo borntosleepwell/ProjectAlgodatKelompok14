@@ -115,17 +115,34 @@ public class TreeTim {
                                                                         __/ |                
                                                                        |___/                 
                 """;
-        System.out.println(header);
+                // String done = """
+                //     __  __       _______ _____ _    _   _____   ____  _   _ ______   _ 
+                //    |  \\/  |   /\\|__   __/ ____| |  | | |  __ \\ / __ \\| \\ | |  ____| | |
+                //    | \\  / |  /  \\  | | | |    | |__| | | |  | | |  | |  \\| | |__    | |
+                //    | |\\/| | / /\\ \\ | | | |    |  __  | | |  | | |  | | . ` |  __|   | |
+                //    | |  | |/ ____ \\| | | |____| |  | | | |__| | |__| | |\\  | |____  |_|
+                //    |_|  |_/_/    \\_\\_|  \\_____|_|  |_| |_____/ \\____/|_| \\_|______| (_)
+                                                                                       
+                                                                                       
+                //   """;
+        System.out.println(header);        
         if (root == null) {
             System.out.println("Tree is empty.");
             return;
         }
         Queue queue = new Queue();
         queue.enqueue(root);
+
         while (!queue.isEmpty()) {
             NodeTim current = queue.dequeue();
+            if(current == null){
+                continue;
+            }
             if(current.headPlayer == null && current.nama != "Champion" && current.nama !="Final"){
                 NodeTim selanjutnya = queue.dequeue();
+                if (selanjutnya == null){
+                    return;
+                }
                 if (root == null) {
                     System.out.println("Tree is empty.");
                     return;
@@ -183,6 +200,7 @@ public class TreeTim {
                 }
             }
             if (current.headPlayer != null) {
+                // System.out.println(header);
                 current.headPlayer.updateKDA();
                 int nilai = random.nextInt(2);
                 NodeTim selanjutnya = queue.dequeue(); 
