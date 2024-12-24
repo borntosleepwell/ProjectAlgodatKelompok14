@@ -46,7 +46,7 @@ public class ListPlayer {
         NodePlayer current = head;
         boolean isFound = false;
         while(current != null){
-            if(current.nama.equals(namaPlayer)){
+            if(current.nama.equalsIgnoreCase(namaPlayer)){
                 isFound = true;
                 break;
             }

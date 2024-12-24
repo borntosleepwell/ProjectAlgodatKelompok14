@@ -4,17 +4,6 @@ public class Stack {
     boolean isEmpty(){
         return top == null;
     }
-
-    int size(){
-        NodePlayer current = bot;
-        int i = 0;
-        while(current != null){
-            i++;
-            current = current.next;
-        }
-        return i;
-    }
-
     void push(NodePlayer newNode){
         if(isEmpty()){
             top = bot = newNode;

@@ -4,17 +4,6 @@ public class Queue {
     boolean isEmpty(){
         return front == null;
     }
-
-    int size(){
-        NodeQueue current = front;
-        int i = 0;
-        while(current != null){
-            i++;
-            current = current.next;
-        }
-        return i;
-    }
-
     void enqueue(NodeTim treeNode){
         NodeQueue newNode = new NodeQueue(treeNode);
         if(isEmpty()){
