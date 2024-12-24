@@ -1,5 +1,4 @@
 import java.util.Random;
-
 public class TreeTim {
     NodeTim root = null;
     Random random = new Random();
@@ -8,22 +7,28 @@ public class TreeTim {
         return root == null;
     }
 
-    void levelOrder(){
+    void levelOrder() {
         if (root == null) {
             System.out.println("Tree is empty.");
             return;
         }
-        Queue queue = new Queue();
-        queue.enqueue(root);
-        while (!queue.isEmpty()) {
-            NodeTim current = queue.dequeue();
-            System.out.println(current.nama);
-            if (current.left != null) {
-                queue.enqueue(current.left);
-            }
-            if (current.right != null) {
-                queue.enqueue(current.right);
-            }
+        
+        System.out.println("Tournament Bracket:");
+        System.out.println("==================");
+        
+        System.out.println("└── " + root.nama);
+        
+        if (root.left != null && root.right != null) {
+            // First Final Bracket
+            System.out.println("    ├── " + (root.left.nama != null ? root.left.nama : "Final"));
+            System.out.println("    │   ├── " + (root.left.left != null ? root.left.left.nama : "[Team]"));
+            System.out.println("    │   └── " + (root.left.right != null ? root.left.right.nama : "[Team]"));
+            
+            System.out.println("    └── " + (root.right.nama != null ? root.right.nama : "Final"));
+            System.out.println("        ├── " + (root.right.left != null ? root.right.left.nama : "[Team]"));
+            System.out.println("        └── " + (root.right.right != null ? root.right.right.nama : "[Team]"));
+        } else {
+            System.out.println("No teams in the tournament.");
         }
     }
 

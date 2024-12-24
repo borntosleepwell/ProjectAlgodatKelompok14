@@ -135,6 +135,9 @@ public class MainMenu {
                 System.out.flush();
             }
             else{
+                System.out.println("===============================================");
+                System.out.println("= Terimakasih Telah Menggunakan, Sampai Jumpa =");
+                System.out.println("===============================================");
                 break;
             }
         }

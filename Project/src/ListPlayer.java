@@ -23,7 +23,9 @@ public class ListPlayer {
             if(current.death == 0){
                 System.out.println("KDA : 0");
             }else{
-                System.out.println("KDA : " + (float)(current.kill + current.assist) / current.death);
+                float kda = (float)(current.kill + current.assist)/current.death;
+                float roundedKda = Math.round(kda*10)/10.0f;
+                System.out.println("KDA : " + roundedKda);
             }
             System.out.println();
             current = current.next;
